@@ -167,6 +167,7 @@ namespace Sandbox
             int compteur = 0;
             while(compteur < 20)
             { 
+                //Les années bissextiles sont les années divisible par 4 sauf pour les années du siècles dont le nombre n'est pas divisible par 400
                 if (LeapYears % 100 == 0 && LeapYears % 400 != 0)
                 {
                     LeapYears++;
