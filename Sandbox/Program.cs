@@ -20,8 +20,9 @@
             Console.WriteLine("");
             Elementary.PrimeNumbers();
             Console.WriteLine("");
-            Elementary.GuessingSecretNumber();
-            
+            //Elementary.GuessingSecretNumber();
+            Console.WriteLine("");
+            Elementary.PrintNext20LeapYears();
         }
     }
 }

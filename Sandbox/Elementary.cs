@@ -158,5 +158,30 @@ namespace Sandbox
             
 
         }
+
+        //Write a program that prints the next 20 leap years(années bissextiles).
+        static public void PrintNext20LeapYears()
+        {
+            Console.WriteLine("Here the next 20 leap years");
+            int LeapYears = 2022;
+            int compteur = 0;
+            while(compteur < 20)
+            { 
+                if (LeapYears % 100 == 0 && LeapYears % 400 != 0)
+                {
+                    LeapYears++;
+                }
+                if (LeapYears % 4 == 0)
+                {
+                    Console.WriteLine(LeapYears);
+                    compteur++;
+                    LeapYears++;
+                }
+                else
+                {
+                    LeapYears++;
+                }
+            }
+        }
     }
 }
