@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,6 +82,7 @@ namespace Sandbox
                 Console.WriteLine("The product of number 1 to " + ConvertStringToInt + " is " + x);
             }
 
+
         }
 
         static public void MultiplicationTableTo12()
@@ -96,6 +98,65 @@ namespace Sandbox
                 Console.WriteLine("");
                 //petit espace pour une meilleure visibilité
             }
+        }
+
+        // Write a program that prints all prime numbers. (Note: if your programming language does not support arbitrary size numbers, printing all primes up to the largest number you can easily represent is fine too.)
+        static public void PrimeNumbers()
+        {
+            Console.WriteLine("Voici les nombres premiers (Nombre se divisant uniquement par 1 et lui-même jusqu'à 100" );
+            int PrimeNb = 2;
+            
+            while (PrimeNb < 100)
+            {   
+                int compteur = 0;
+                for(int i = 2; i <= PrimeNb; i++)
+                {
+                    if (PrimeNb % i == 0)
+                    {
+                        compteur += 1;
+                    }
+                }
+                if (compteur == 1)
+                {
+                    Console.WriteLine(PrimeNb);
+                }
+                PrimeNb++;
+            }
+        }
+
+        //Write a guessing game where the user has to guess a secret number. After every guess the program tells the user whether their number was too large or too small. At the end the number of tries needed should be printed.
+        //It counts only as one try if they input the same number multiple times consecutively.
+        static public void GuessingSecretNumber()
+        {
+            //get a random number to guess (between 1 and 9999 or its too hard for the player)
+            Random rnd = new Random();
+            int MyNumber = rnd.Next(1,9999);
+            Console.WriteLine("Guess my number !");
+
+            
+            int Compteur = 0;
+            while (true)
+            {
+                int GuessNumber = int.Parse(Console.ReadLine());
+                if (GuessNumber == MyNumber)
+                {
+                    Console.WriteLine("GG man you find my number. It was " + MyNumber);
+                    Console.WriteLine(Compteur + " tries");
+                    break;
+                }
+                if (GuessNumber > MyNumber)
+                {
+                    Console.WriteLine("My number is smaller");
+                }
+                if (GuessNumber < MyNumber)
+                {
+                    Console.WriteLine("My number is higher");
+                }
+                Compteur++;
+            }
+            //Console.WriteLine("You lost (" + Compteur + " tries)");
+            
+
         }
     }
 }

@@ -16,7 +16,12 @@
             Console.WriteLine("");
             Elementary.AskingNumberAndChooseSumOrProduct();
             Console.WriteLine("");
-            Elementary.MultiplicationTableTo12();
+           // Elementary.MultiplicationTableTo12();
+            Console.WriteLine("");
+            Elementary.PrimeNumbers();
+            Console.WriteLine("");
+            Elementary.GuessingSecretNumber();
+            
         }
     }
 }
